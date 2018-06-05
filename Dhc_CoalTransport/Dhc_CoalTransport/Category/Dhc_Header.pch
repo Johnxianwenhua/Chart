@@ -1,0 +1,123 @@
+//
+//  Dhc_Header.pch
+//  Dhc_CoalTransport
+//
+//  Created by ArrogantDevils on 2018/5/29.
+//  Copyright © 2018年 Dhc. All rights reserved.
+//
+
+
+#import "UIImageView+WebCache.h"
+
+#import "SVProgressHUD.h"
+
+#import "Dhc_HttpTool.h"
+
+#import "Dhc_AnalyticalData.h"
+
+#import "Dhc_NavgationController.h"
+
+#import "MJRefresh.h"
+
+#pragma mark =============================   自定义字段
+
+#define Success_Status 4
+
+#define Error_Status 5
+
+#define UserName @"userName"
+
+#pragma mark =============================   接口
+
+#define ContractUrl @"http://192.168.31.224:8080/coal/cont/contList.act"
+
+#define LoginUrl @"http://192.168.31.224:8080/coal/appLogin/login.act"
+
+#pragma mark --------  全局宏
+
+#define  Navigation_Color RGBColor(95,190,187)
+
+#define  Screen_Size_Width  [[UIScreen mainScreen] bounds].size.width
+
+#define  Screen_Size_Height  [[UIScreen mainScreen] bounds].size.height
+
+#define  ContentView_Width self.contentView.frame.size.width
+
+#define  ContentView_Height self.contentView.frame.size.height
+
+#define  ARC_RandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]//获取随机颜色
+
+#define  RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define  RGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
+
+#define  WeakSelf(type)  __weak typeof(type) weak##type = type;//弱引用
+
+#define  StrongSelf(type)  __strong typeof(type) type = weak##type;//强引用
+
+//自定义NSlog
+#define NSLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+
+// 判断是否为空字符串
+#define  isEmptyStr(string) string == nil || string == NULL ||[string isKindOfClass:[NSNull class]]|| [string isEqualToString:@""] ||[[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0 ? YES : NO
+
+// 判断是否为 iPhone 5SE
+#define iPhone5SE [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f
+
+// 判断是否为iPhone 6/6s
+#define iPhone6_6s [[UIScreen mainScreen] bounds].size.width == 375.0f && [[UIScreen mainScreen] bounds].size.height == 667.0f
+
+// 判断是否为iPhone 6Plus/6sPlus
+#define iPhone6Plus_6sPlus [[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f
+
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//判断是否为9.7寸iPad
+#define iPad_Size_9_7 [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 480.0f
+
+//获取系统版本
+#define IOS_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+
+//颜色
+#define GrayColor RGBColor(225, 225, 225)
+
+#define LayerColor RGBColor(241, 241, 241).CGColor
+
+//NSUserDefaults
+#define User_Defaults [NSUserDefaults standardUserDefaults]
+
+#define UserInfor_Name [Cnydjy_NSStringCategory readLocalDataWithKey:UserName]
+
+#define UserInfor_Uid [Cnydjy_NSStringCategory readLocalDataWithKey:UserUid]
+
+
+//字体
+#define F22      [UIFont systemFontOfSize:22]
+
+#define F20      [UIFont systemFontOfSize:20]
+
+#define F18      [UIFont systemFontOfSize:18]
+
+#define F17      [UIFont systemFontOfSize:17]
+
+#define F16      [UIFont systemFontOfSize:16]
+
+#define F15      [UIFont systemFontOfSize:15]
+
+#define F14      [UIFont systemFontOfSize:14]
+
+#define F13      [UIFont systemFontOfSize:13]
+
+#define F12      [UIFont systemFontOfSize:12]
+
+#define F11      [UIFont systemFontOfSize:11]
+
+#define F10      [UIFont systemFontOfSize:10]
+
+#ifndef Dhc_Header_pch
+#define Dhc_Header_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Dhc_Header_pch */

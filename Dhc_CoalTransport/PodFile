@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+target 'Dhc_CoalTransport' do
+use_frameworks!
+pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'YBPopupMenu'
+end

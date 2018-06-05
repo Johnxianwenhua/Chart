@@ -1,0 +1,6 @@
+framework module Pods_Dhc_CoalTransport {
+  umbrella header "Pods-Dhc_CoalTransport-umbrella.h"
+
+  export *
+  module * { export * }
+}
